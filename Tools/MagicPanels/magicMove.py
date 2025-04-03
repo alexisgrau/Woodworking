@@ -220,8 +220,8 @@ def showQtGUI():
 			rowmc = row
 			rowpath = row + 70
 			
-			btsize = 50
-			btoffset = 5
+			btsize = 60
+			btoffset = 6
 			cbt1 = rside - (2 * btsize) - btoffset + 5
 			cbt2 = rside - btsize + btoffset + 5
 	
@@ -248,14 +248,15 @@ def showQtGUI():
 			# button
 			self.o1B1 = QtGui.QPushButton("X-", self)
 			self.o1B1.clicked.connect(self.setX1)
-			self.o1B1.setFixedWidth(btsize)
+			self.o1B1.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 			self.o1B1.move(cbt1, row)
 			self.o1B1.setAutoRepeat(True)
 			
 			# button
-			self.o1B2 = QtGui.QPushButton("X+", self)
+
+			self.o1B2 = QtGui.QPushButton("X+", self)  # Texte plus court
 			self.o1B2.clicked.connect(self.setX2)
-			self.o1B2.setFixedWidth(btsize)
+			self.o1B2.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 			self.o1B2.move(cbt2, row)
 			self.o1B2.setAutoRepeat(True)
 
@@ -268,14 +269,14 @@ def showQtGUI():
 			# button
 			self.o2B1 = QtGui.QPushButton("Y-", self)
 			self.o2B1.clicked.connect(self.setY1)
-			self.o2B1.setFixedWidth(btsize)
+			self.o2B1.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 			self.o2B1.move(cbt1, row)
 			self.o2B1.setAutoRepeat(True)
 			
 			# button
 			self.o2B2 = QtGui.QPushButton("Y+", self)
 			self.o2B2.clicked.connect(self.setY2)
-			self.o2B2.setFixedWidth(btsize)
+			self.o2B2.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 			self.o2B2.move(cbt2, row)
 			self.o2B2.setAutoRepeat(True)
 
@@ -288,14 +289,14 @@ def showQtGUI():
 			# button
 			self.o3B1 = QtGui.QPushButton("Z-", self)
 			self.o3B1.clicked.connect(self.setZ1)
-			self.o3B1.setFixedWidth(btsize)
+			self.o3B1.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 			self.o3B1.move(cbt1, row)
 			self.o3B1.setAutoRepeat(True)
 			
 			# button
 			self.o3B2 = QtGui.QPushButton("Z+", self)
 			self.o3B2.clicked.connect(self.setZ2)
-			self.o3B2.setFixedWidth(btsize)
+			self.o3B2.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 			self.o3B2.move(cbt2, row)
 			self.o3B2.setAutoRepeat(True)
 
@@ -683,14 +684,14 @@ def showQtGUI():
 				# button
 				self.cocB1 = QtGui.QPushButton("-", self)
 				self.cocB1.clicked.connect(self.setCornerM)
-				self.cocB1.setFixedWidth(btsize)
+				self.cocB1.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 				self.cocB1.move(cbt1, row)
 				self.cocB1.setAutoRepeat(True)
 				
 				# button
 				self.cocB2 = QtGui.QPushButton("+", self)
 				self.cocB2.clicked.connect(self.setCornerP)
-				self.cocB2.setFixedWidth(btsize)
+				self.cocB2.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 				self.cocB2.move(cbt2, row)
 				self.cocB2.setAutoRepeat(True)
 
@@ -705,14 +706,14 @@ def showQtGUI():
 				# button
 				self.cecB1 = QtGui.QPushButton(translate('magicMove', 'on'), self)
 				self.cecB1.clicked.connect(self.setCenterOn)
-				self.cecB1.setFixedWidth(btsize)
+				self.cecB1.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 				self.cecB1.move(cbt1, row)
 				self.cecB1.setAutoRepeat(True)
 				
 				# button
 				self.cecB2 = QtGui.QPushButton(translate('magicMove', 'off'), self)
 				self.cecB2.clicked.connect(self.setCenterOff)
-				self.cecB2.setFixedWidth(btsize)
+				self.cecB2.setStyleSheet(f"QPushButton {{ min-width: {btsize}px; max-width: {btsize}px; }}")
 				self.cecB2.move(cbt2, row)
 				self.cecB2.setAutoRepeat(True)
 
@@ -729,6 +730,9 @@ def showQtGUI():
 			# ############################################################################
 
 			# show window
+
+			self.setMinimumWidth(260)
+
 			self.show()
 
 			# init
